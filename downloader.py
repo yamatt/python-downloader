@@ -40,9 +40,10 @@ class BaseDownload(object):
         
     def __get_time_diff(self):
         now = time_now()
-        if self.last_time:
-            return now - self.last_time
+        last_time = self.last_time
         self.last_time = now
+        if self.last_time:
+            return now - last_time
 
 class DownloadToPath(BaseDownload):
     def __init__(self, url, output_path):
