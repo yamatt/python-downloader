@@ -2,8 +2,8 @@
 This module allows you to very simply specify a download.
 
 ## Usage
- >>> from downloader import Download
- >>> dl = Download("http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png")
+ from downloader import Download
+ dl = Download("http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png")
  
 ## To Do
 * Needs better docstrings and unit tests
