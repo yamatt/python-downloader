@@ -16,7 +16,7 @@
 """
 
 from urllib2 import urlopen as download_file
-from time import time as time_now
+from time import time as now
 from urlparse import urlparse
 import os
 from os import path
@@ -56,11 +56,12 @@ class BaseDownload(object):
             self.kbps = round(kbytes_ps,3)
         
     def __get_time_diff(self):
-        now = time_now()
-        last_time = self.last_time
-        self.last_time = now
+        now = now()
+        time_diff = 0
         if self.last_time:
-            return now - last_time
+            time_diff = now - last_time
+        self.last_time = now
+        return time_diff
 
 class DownloadToPath(BaseDownload):
     def __init__(self, url, output_path):
